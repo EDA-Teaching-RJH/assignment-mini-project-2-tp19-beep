@@ -17,4 +17,24 @@ def main():
 
         choice = input("Choose an option between 1 and 8.")
         if choice == '1': 
-            
+            view_collection()
+        elif choice == '2':
+            add_collectible()
+        elif choice == '3':
+            remove_collectible()
+        elif choice == '4':
+            search_collection()
+        elif choice == '5':
+            update_collectible()
+        elif choice == '6': 
+            count_collectibles()
+        elif choice == '7':
+            random_collectible()
+        elif choice == '8':
+            print("Exiting The Collector's Vault...")
+            print("...")
+            print("Goodbye!")
+            break
+        else:
+            print("INVALID")
+            print("Please select an option between 1 and 8")
