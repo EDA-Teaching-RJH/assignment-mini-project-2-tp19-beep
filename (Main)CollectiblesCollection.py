@@ -175,8 +175,6 @@ def remove_collectible():
         
     print("Collectible with given ID not found.")
 
-
-
 def search_collection():
     print("Searching Collection...")
 
@@ -188,7 +186,17 @@ def count_collectibles():
     print(f"\nTotal Collectibles: {len(collection)}")
 
 def random_collectible():
+    if not collection:
+        print("Your Collection is empty")
+        return
+
+    c = random.choice(collection)
+    print("\n---Random Collectible---")
     print("Choosing a random Collectible...")
+    print(
+        f"{c['brand']} | {c['name']} | {c['year']} | "
+            f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
+    )
 
 
 if __name__ == "__main__":
