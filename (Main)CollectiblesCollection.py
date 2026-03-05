@@ -20,15 +20,29 @@ def load_collection():
                     "year": int(year),
                     "price": float(price),
                     "rarity": rarity, 
-                    "number_id": (int)number_id
+                    "number_id": number_id
                 }
                 collection.append(collectible)
 
     except FileNotFoundError:
         collection = []
 
+def save_collection():
+    with open(DATA_FILE, "w") as f:
+        for collectible in collection:
+            line = (
+                f"{collectible['brand']},"
+                f"{collectible['name']},"
+                f"{collectible['year']},"
+                f"{collectible['price']},"
+                f"{collectible['rarity']},"
+                f"{collectible['number_id']}"
+            )
+            f.write(line)
+
 
 def main():
+    load_collection()
     while True:
         print("\n!!Welcome to the Collectors Vault!!")
         print("A manager for collectibles and toys from the 2000s and 2010s!")
