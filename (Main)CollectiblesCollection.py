@@ -85,6 +85,7 @@ def main():
             print("Please select an option between 1 and 8")
 
 def view_collection():
+    print("Viewing collection...")
     if not collection:
         print("Your Collection is Empty.")
         return
@@ -143,12 +144,25 @@ def  add_collectible():
 
     collection.append(collectible)
     save_collection()
-    
+
     print("Collectible added successfully!")
 
 
 def remove_collectible():
-    print("Removing a Collectible...")
+    for item in collection:
+        if item["number_id"] == input("Enter the collectible ID: ").strip():
+            collection.remove(item)
+            save_collection()
+            print("Removing collectible...")
+            print("Collectible Removed Successfully!")
+            return 
+        
+        if not collection:
+            print("Your Collection is empty")
+        else: 
+            print("Collectible with given ID not found.")
+
+
 
 def search_collection():
     print("Searching Collection...")
@@ -158,6 +172,7 @@ def  update_collectible():
 
 def count_collectibles():
     print("Counting Collectibles...")
+    print(f"\nTotal Collectibles: {len(collection)}")
 
 def random_collectible():
     print("Choosing a random Collectible...")
