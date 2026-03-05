@@ -6,7 +6,27 @@ def load_collection():
     collection = []
 
     try:
-        
+        with open(DATA_FILE, "r") as f:
+            for line in f: 
+                line = line.strip()
+                if line == "":
+                    continue
+
+                brand, name, year, price, rarity, number_id = line.strip().split(",")
+
+                collectible = {
+                    "brand": brand,
+                    "name": name,
+                    "year": int(year),
+                    "price": float(price),
+                    "rarity": rarity, 
+                    "number_id": (int)number_id
+                }
+                collection.append(collectible)
+
+    except FileNotFoundError:
+        collection = []
+
 
 def main():
     while True:
