@@ -181,8 +181,26 @@ def search_collection():
         return
 
     print("\n---Search Collection---")
-    search_term = input("Enter search term (brand, name, year, rarity OR ID): ").strip() 
+    query = input("Enter search term (brand, name, year, rarity OR ID): ").strip() 
 
+    found = False
+
+    for c in collection:
+        if(
+            query.lower() in c["brand"].lower() or
+            query.lower() in c["name"].lower() or
+            query.lower() in str(c["year"]) or
+            query.lower() in c["rarity"].lower() or
+            query.lower() in c["number_id"].lower() 
+        ): 
+            print(
+                f"{c['brand']} | {c['name']} | {c['year']} | "
+            f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
+            )
+            found = True 
+
+    if not found:
+        print(f"No Collectible found.")
 
 
 def  update_collectible():
