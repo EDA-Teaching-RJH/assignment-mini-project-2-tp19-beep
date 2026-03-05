@@ -75,6 +75,7 @@ def main():
         elif choice == '7':
             random_collectible()
         elif choice == '8':
+            save_collection()
             print("Exiting The Collector's Vault...")
             print("...")
             print("Goodbye!")
