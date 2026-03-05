@@ -149,18 +149,19 @@ def  add_collectible():
 
 
 def remove_collectible():
+    if not collection:
+        print("Your Collection is empty")
+        return
+    
     for item in collection:
-        if item["number_id"] == input("Enter the collectible ID: ").strip():
+        if item["number_id"] == target_id:
             collection.remove(item)
             save_collection()
             print("Removing collectible...")
             print("Collectible Removed Successfully!")
             return 
         
-        if not collection:
-            print("Your Collection is empty")
-        else: 
-            print("Collectible with given ID not found.")
+        print("Collectible with given ID not found.")
 
 
 
