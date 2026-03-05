@@ -1,3 +1,13 @@
+DATA_FILE = "collection.txt"
+collection = []
+
+def load_collection():
+    global collection
+    collection = []
+
+    try:
+        
+
 def main():
     while True:
         print("\n!!Welcome to the Collectors Vault!!")
@@ -15,7 +25,7 @@ def main():
         print("7. Give me a random Collectible")
         print("8. Exit.")
 
-        choice = input("Choose an option between 1 and 8.")
+        choice = input("Choose an option between 1 and 8.").strip()
         if choice == '1': 
             view_collection()
         elif choice == '2':
@@ -40,18 +50,25 @@ def main():
             print("Please select an option between 1 and 8")
 
 def view_collection():
+    print("Viewing Collection...")
 
 def  add_collectible():
+    print("Adding a new Collectible...")
 
 def remove_collectible():
+    print("Removing a Collectible...")
 
 def search_collection():
+    print("Searching Collection...")
 
 def  update_collectible():
+    print("Updating Collection...")
 
 def count_collectibles():
+    print("Counting Collectibles...")
 
 def random_collectible():
+    print("Choosing a random Collectible...")
 
 
 if __name__ == "__main__":
