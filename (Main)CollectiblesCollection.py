@@ -132,7 +132,19 @@ def  add_collectible():
         else: 
             print("Invalid input. Please enter a FIVE(5) digit number.")
 
+    collectible = {
+        "brand": brand,
+        "name": name, 
+        "year": year, 
+        "price": price, 
+        "rarity": rarity, 
+        "number_id": number_id
+    }
+
+    collection.append(collectible)
+    save_collection()
     
+    print("Collectible added successfully!")
 
 
 def remove_collectible():
