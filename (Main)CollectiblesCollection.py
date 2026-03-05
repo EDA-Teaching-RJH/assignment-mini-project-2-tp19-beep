@@ -176,7 +176,14 @@ def remove_collectible():
     print("Collectible with given ID not found.")
 
 def search_collection():
-    print("Searching Collection...")
+    if not collection:
+        print("Your Collection is empty")
+        return
+
+    print("\n---Search Collection---")
+    search_term = input("Enter search term (brand, name, year, rarity OR ID): ").strip() 
+
+
 
 def  update_collectible():
     print("Updating Collection...")
