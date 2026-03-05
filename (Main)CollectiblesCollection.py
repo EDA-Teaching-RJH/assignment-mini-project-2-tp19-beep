@@ -85,7 +85,16 @@ def main():
             print("Please select an option between 1 and 8")
 
 def view_collection():
-    print("Viewing Collection...")
+    if not collection:
+        print("Your Collection is Empty.")
+        return
+    
+    print("\nYour Collection:")
+    for c in collection:
+        print(
+            f"{c['brand']} | {c['name']} | {c['year']} | "
+            f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
+        )
 
 def  add_collectible():
     print("Adding a new Collectible...")
