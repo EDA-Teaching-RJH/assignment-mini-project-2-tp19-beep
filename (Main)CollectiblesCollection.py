@@ -100,7 +100,7 @@ def view_collection():
 def  add_collectible():
     print("\n---Add New Collectible---")
     brand = input("Enter Brand: ").strip()
-    name = input("Enter Name: ")
+    name = input("Enter Name: ").strip()
 
     while True: 
         year_input = input("Enter Year: ").strip()
@@ -127,11 +127,22 @@ def  add_collectible():
             print("Invalid input. Please enter a valid rating.")
 
     while True:
-        number_id = input("Enter ID: ").strip()
-        if len(number_id) == 5 and number_id.isdigit():
+        number_id = input("Enter ID (5-digits): ").strip()
+        
+        if not (len(number_id) == 5 and number_id.isdigit()):
+            print("Invalid input. Please enter a 5-digit numeric ID.")
+            continue
+
+        duplicate = False
+        for item in collection:
+            if item["number_id"] == number_id:
+                duplicate = True
+                break
+        
+        if duplicate:
+            print("ID already exists. Please enter a unique ID.")
+        else:
             break 
-        else: 
-            print("Invalid input. Please enter a FIVE(5) digit number.")
 
     collectible = {
         "brand": brand,
@@ -152,16 +163,17 @@ def remove_collectible():
     if not collection:
         print("Your Collection is empty")
         return
+
+    target_id = input("Enter the collectible ID to remove: ").strip()    
     
     for item in collection:
         if item["number_id"] == target_id:
             collection.remove(item)
             save_collection()
-            print("Removing collectible...")
             print("Collectible Removed Successfully!")
             return 
         
-        print("Collectible with given ID not found.")
+    print("Collectible with given ID not found.")
 
 
 
