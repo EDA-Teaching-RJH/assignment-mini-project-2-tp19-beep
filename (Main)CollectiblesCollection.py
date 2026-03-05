@@ -110,9 +110,13 @@ def  add_collectible():
             print("Invalid input. Please enter a valid year.")
 
     while True:
-        price_input = input("Enter Price: ")
-        price = price_input
-        
+        price_input = input("Enter Price: ").strip()
+        if price_input.replace('.', '', 1).isdigit(): 
+            price = float(price_input)
+            break 
+        else:
+            print("Invalid input. Please enter a Valid price")
+
     while True:
         rarity_input = input("Enter Rarity (Common/Uncommon/Rare/Very Rare/Ultra Rare): ")
         rarity = rarity_input.strip().title()
@@ -121,6 +125,14 @@ def  add_collectible():
         else:
             print("Invalid input. Please enter a valid rating.")
 
+    while True:
+        number_id = input("Enter ID: ").strip()
+        if len(number_id) == 5 and number_id.isdigit():
+            break 
+        else: 
+            print("Invalid input. Please enter a FIVE(5) digit number.")
+
+    
 
 
 def remove_collectible():
