@@ -109,6 +109,20 @@ def  add_collectible():
         else:
             print("Invalid input. Please enter a valid year.")
 
+    while True:
+        price_input = input("Enter Price: ")
+        price = price_input
+        
+    while True:
+        rarity_input = input("Enter Rarity (Common/Uncommon/Rare/Very Rare/Ultra Rare): ")
+        rarity = rarity_input.strip().title()
+        if rarity in ["Common", "Uncommon", "Rare", "Very Rare", "Ultra Rare"]:
+            break 
+        else:
+            print("Invalid input. Please enter a valid rating.")
+
+
+
 def remove_collectible():
     print("Removing a Collectible...")
 
