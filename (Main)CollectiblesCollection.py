@@ -12,7 +12,7 @@ def load_collection():
                 if line == "":
                     continue
 
-                brand, name, year, price, rarity, number_id = line.strip().split(",")
+                brand, name, year, price, rarity, number_id = line.split(",")
 
                 collectible = {
                     "brand": brand,
@@ -36,7 +36,7 @@ def save_collection():
                 f"{collectible['year']},"
                 f"{collectible['price']},"
                 f"{collectible['rarity']},"
-                f"{collectible['number_id']}"
+                f"{collectible['number_id']}\n"
             )
             f.write(line)
 
