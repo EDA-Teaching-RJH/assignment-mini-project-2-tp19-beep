@@ -97,7 +97,17 @@ def view_collection():
         )
 
 def  add_collectible():
-    print("Adding a new Collectible...")
+    print("\n---Add New Collectible---")
+    brand = input("Enter Brand: ").strip()
+    name = input("Enter Name: ")
+
+    while True: 
+        year_input = input("Enter Year: ").strip()
+        if year_input.isdigit():
+            year = int(year_input)
+            break
+        else:
+            print("Invalid input. Please enter a valid year.")
 
 def remove_collectible():
     print("Removing a Collectible...")
