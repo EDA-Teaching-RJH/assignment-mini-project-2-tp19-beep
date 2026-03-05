@@ -38,3 +38,21 @@ def main():
         else:
             print("INVALID")
             print("Please select an option between 1 and 8")
+
+def view_collection():
+
+def  add_collectible():
+
+def remove_collectible():
+
+def search_collection():
+
+def  update_collectible():
+
+def count_collectibles():
+
+def random_collectible():
+
+
+if __name__ == "__main__":
+    main()
