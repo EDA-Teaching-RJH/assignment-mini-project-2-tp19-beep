@@ -8,3 +8,13 @@ Bratz,Bratz Doll Yasmin Original Vintage MGA,2001,30.0,Common,48569
 Bratz,Bratz Princess Jade (1st Ed.),2005,1190.0,Rare,34870
 Bratz,Bratz Doll Limited Edition Year’s Celebration Yasmin V,2004,4000.0,Very Rare,46397
 Bratz,MGA Bratz Secret Date Jade,2004,251.0,Uncommon,77927
+Monster High,First Wave Cleo De Nile & Deuce Gorgon,2010,1000.0,Ultra Rare,57883
+Monster High,Ghoulia Yelps First Wave,2010,400.0,Very Rare,16174
+Monster High,Sweet 1600 Frankie Stein,2012,150.0,Rare,75443
+Monster High,Picture Day Draculaura,2012,80.0,Uncommon,14265
+Monster High,Ghouls Alive! Frankie Stein,2011,40.0,Common,42400
+My Little Pony,Princess Luna,2011,300.0,Ultra Rare,31448
+My Little Pony,Rainbow Dash 20% Cooler,2013,250.0,Very Rare,31221
+My Little Pony,G3 Minty Christmas Edition,2005,100.0,Rare,29221
+My Little Pony,Pinkie Pie G4 Core,2010,60.0,Uncommon,21455
+My Little Pony,Twilight Sparkle Brushable,2012,10.0,Common,36420
