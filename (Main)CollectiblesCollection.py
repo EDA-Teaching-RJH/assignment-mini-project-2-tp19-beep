@@ -1,3 +1,6 @@
+
+import random 
+
 DATA_FILE = "collection.txt"
 collection = []
 
@@ -191,10 +194,10 @@ def search_collection():
             query.lower() in c["name"].lower() or
             query.lower() in str(c["year"]) or
             query.lower() in c["rarity"].lower() or
-            query.lower() in c["number_id"].lower() 
+            query.lower() in c["number_id"]
         ): 
             print(
-                f"{c['brand']} | {c['name']} | {c['year']} | "
+            f"{c['brand']} | {c['name']} | {c['year']} | "
             f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
             )
             found = True 
@@ -204,7 +207,54 @@ def search_collection():
 
 
 def  update_collectible():
-    print("Updating Collection...")
+    if not collection:
+        print("Your Collection is empty")
+        return
+
+    target_id = input("Enter the collectible ID to update: ").strip()
+
+    for item in collection: 
+        if item["number_id"] == target_id:
+            print("\nFound Collectible")
+            print(
+            f"{c['brand']} | {c['name']} | {c['year']} | "
+            f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
+            )
+
+            print("\nWhat would you like to update?: ")
+            print("1. Brand")
+            print("2. Name")
+            print("3. Year")
+            print("4. Rarity")
+            print("5. Price")
+            print("6. Cancel")
+
+            choice = input("Choose an option from 1-6: ").strip()
+
+            if choice == "1":
+                item["brand"] = input("New Brand: ").strip()
+            elif choice == "2":
+                item["name"] = input("New Name: ").strip()
+            elif choice == "3":
+                while True:
+                    year_input = input("New Year: ").strip()
+                    if year_input.isdigit(): 
+                        item["year"] = int(year_input)
+                        break 
+                    print("Invalid year.")
+            elif choice == "4":
+                while True:
+                    rarity_input = input("New Rarity (Common/Uncommon/Rare/Very Rare/Ultra Rare): ").strip()
+                    if rarity_input in ["Common", "Uncommon", "Rare", "Very Rare", "Ultra Rare"]:
+                        item["rarity"] = rarity_input
+                        break 
+                    print("Invalid rarity.")
+            elif choice == "5":
+                while True
+
+
+
+
 
 def count_collectibles():
     print("Counting Collectibles...")
