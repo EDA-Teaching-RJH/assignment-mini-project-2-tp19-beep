@@ -131,7 +131,7 @@ def  add_collectible():
 
     while True: 
         year_input = input("Enter Year: ").strip()
-        if year_input.isdigit():
+        if valid_year(year_input):  
             year = int(year_input)
             break
         else:
@@ -139,7 +139,7 @@ def  add_collectible():
 
     while True:
         price_input = input("Enter Price: ").strip()
-        if price_input.replace('.', '', 1).isdigit(): 
+        if valid_price(price_input):
             price = float(price_input)
             break 
         else:
@@ -156,7 +156,7 @@ def  add_collectible():
     while True:
         number_id = input("Enter ID (5-digits): ").strip()
         
-        if not (len(number_id) == 5 and number_id.isdigit()):
+        if not valid_id(number_id):
             print("Invalid input. Please enter a 5-digit numeric ID.")
             continue
 
