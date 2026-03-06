@@ -109,7 +109,7 @@ def view_collection():
 
 
 
-def  add_collectible():
+def add_collectible():
     print("\n---Add New Collectible---")
     brand = input("Enter Brand: ").strip()
     name = input("Enter Name: ").strip()
@@ -208,7 +208,7 @@ def search_collection():
             query.lower() in c["name"].lower() or
             query.lower() in str(c["year"]) or
             query.lower() in c["rarity"].lower() or
-            query.lower() in c["number_id"]
+            query in c["number_id"]
         ): 
             print(
             f"{c['brand']} | {c['name']} | {c['year']} | "
@@ -222,7 +222,7 @@ def search_collection():
 
 
 
-def  update_collectible():
+def update_collectible():
     if not collection:
         print("Your Collection is empty")
         return
