@@ -8,6 +8,11 @@ def valid_id(number_id):
         return True
     return False
 
+def valid_price(price):
+    if re.fullmatch(r"\d+(\.\d{1,2})?", price):
+        return True
+    return False
+
 def load_collection():
     global collection
     collection = []
@@ -313,8 +318,6 @@ def random_collectible():
         f"{c['brand']} | {c['name']} | {c['year']} | "
             f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
     )
-
-
 
 
 if __name__ == "__main__":
