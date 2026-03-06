@@ -1,6 +1,12 @@
+import re
 import random 
 DATA_FILE = "collection.txt"
 collection = []
+
+def valid_id(number_id):
+    if re.fullmatch(r"\d{5}", number_id):
+        return True
+    return False
 
 def load_collection():
     global collection
@@ -28,6 +34,8 @@ def load_collection():
     except FileNotFoundError:
         collection = []
 
+
+
 def save_collection():
     with open(DATA_FILE, "w") as f:
         for collectible in collection:
@@ -40,6 +48,8 @@ def save_collection():
                 f"{collectible['number_id']}\n"
             )
             f.write(line)
+
+
 
 
 def main():
@@ -85,6 +95,9 @@ def main():
             print("INVALID")
             print("Please select an option between 1 and 8")
 
+
+
+
 def view_collection():
     print("Viewing collection...")
     if not collection:
@@ -97,6 +110,9 @@ def view_collection():
             f"{c['brand']} | {c['name']} | {c['year']} | "
             f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
         )
+
+
+
 
 def  add_collectible():
     print("\n---Add New Collectible---")
@@ -160,6 +176,8 @@ def  add_collectible():
     print("Collectible added successfully!")
 
 
+
+
 def remove_collectible():
     if not collection:
         print("Your Collection is empty")
@@ -175,6 +193,9 @@ def remove_collectible():
             return 
         
     print("Collectible with given ID not found.")
+
+
+
 
 def search_collection():
     if not collection:
@@ -202,6 +223,8 @@ def search_collection():
 
     if not found:
         print(f"No Collectible found.")
+
+
 
 
 def  update_collectible():
@@ -255,7 +278,7 @@ def  update_collectible():
                         break 
                     print("Invalid price.")
             elif choice == "6": 
-                print("Update canclled.")
+                print("Update cancelled.")
                 return
 
             else: 
@@ -270,9 +293,13 @@ def  update_collectible():
 
 
 
+
 def count_collectibles():
     print("Counting Collectibles...")
     print(f"\nTotal Collectibles: {len(collection)}")
+
+
+
 
 def random_collectible():
     if not collection:
@@ -286,6 +313,8 @@ def random_collectible():
         f"{c['brand']} | {c['name']} | {c['year']} | "
             f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
     )
+
+
 
 
 if __name__ == "__main__":
