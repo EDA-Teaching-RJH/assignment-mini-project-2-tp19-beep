@@ -269,7 +269,7 @@ def  update_collectible():
             elif choice == "3":
                 while True:
                     year_input = input("New Year: ").strip()
-                    if year_input.isdigit(): 
+                    if valid_year(year_input):
                         item["year"] = int(year_input)
                         break 
                     print("Invalid year.")
@@ -283,7 +283,7 @@ def  update_collectible():
             elif choice == "5":
                 while True:
                     price_input = input("New Price: ").strip()
-                    if price_input.replace(".", "", 1).isdigit():
+                    if valid_price(price_input):
                         item["price"] = float(price_input)
                         break 
                     print("Invalid price.")
