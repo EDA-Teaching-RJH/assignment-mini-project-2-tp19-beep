@@ -1,6 +1,4 @@
-
 import random 
-
 DATA_FILE = "collection.txt"
 collection = []
 
