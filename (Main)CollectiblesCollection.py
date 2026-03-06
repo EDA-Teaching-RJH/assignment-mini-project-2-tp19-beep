@@ -13,6 +13,11 @@ def valid_price(price):
         return True
     return False
 
+def valid_year(year):
+    if re.fullmatch(r"\d{4}", year):
+        return True
+    return False
+
 def load_collection():
     global collection
     collection = []
@@ -75,7 +80,7 @@ def main():
         print("7. Give me a random Collectible")
         print("8. Exit.")
 
-        choice = input("Choose an option between 1 and 8.").strip()
+        choice = input("Choose an option between 1 and 8: ").strip()
         if choice == '1': 
             view_collection()
         elif choice == '2':

@@ -1,1 +1,10 @@
 Barbie,Delphine Silkstone Barbie,2000,90.0,Rare,26929
+Barbie,Spanish Teacher Barbie,2000,35.0,Uncommon,29408
+Barbie,Modern Circle Barbie,2003,20.0,Uncommon,62523
+Barbie,Happy Family Midge,2002,110.0,Rare,56663
+Barbie,Blush & Gold Cocktail Dress Barbie,2006,400.0,Very Rare,79640
+Bratz,Felicia - Sweet Dreams Pajama Party,2005,1000.0,Uncommon,13458
+Bratz,Bratz Doll Yasmin Original Vintage MGA,2001,30.0,Common,48569
+Bratz,Bratz Princess Jade (1st Ed.),2005,1190.0,Rare,34870
+Bratz,Bratz Doll Limited Edition Year’s Celebration Yasmin V,2004,4000.0,Very Rare,46397
+Bratz,MGA Bratz Secret Date Jade,2004,251.0,Uncommon,77927
