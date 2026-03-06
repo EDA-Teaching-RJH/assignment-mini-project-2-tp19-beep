@@ -217,8 +217,8 @@ def  update_collectible():
         if item["number_id"] == target_id:
             print("\nFound Collectible")
             print(
-            f"{c['brand']} | {c['name']} | {c['year']} | "
-            f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
+            f"{item['brand']} | {item['name']} | {item['year']} | "
+            f"{item['rarity']} | ${item['price']:.2f} USD | ID: {item['number_id']}"
             )
 
             print("\nWhat would you like to update?: ")
@@ -244,15 +244,31 @@ def  update_collectible():
                     print("Invalid year.")
             elif choice == "4":
                 while True:
-                    rarity_input = input("New Rarity (Common/Uncommon/Rare/Very Rare/Ultra Rare): ").strip()
+                    rarity_input = input("New Rarity (Common/Uncommon/Rare/Very Rare/Ultra Rare): ").strip().title()
                     if rarity_input in ["Common", "Uncommon", "Rare", "Very Rare", "Ultra Rare"]:
                         item["rarity"] = rarity_input
                         break 
                     print("Invalid rarity.")
             elif choice == "5":
-                while True
+                while True:
+                    price_input = input("New Price: ").strip()
+                    if price_input.replace(".", "", 1).isdigit():
+                        item["price"] = float(price_input)
+                        break 
+                    print("Invalid price.")
+            elif choice == "6": 
+                print("Update canclled.")
+                return
 
+            else: 
+                print("Invalid option.")
+                return
 
+            save_collection()
+            print("Collectible updated successfully!")
+            return 
+
+    print("Collectible with given ID not found.")
 
 
 
