@@ -1,5 +1,6 @@
+import sys
 import random 
-from validators import valid_id, valid_price, valid_year
+from vaultlib import valid_id, valid_price, valid_year
 DATA_FILE = "collection.txt"
 collection = []
 
