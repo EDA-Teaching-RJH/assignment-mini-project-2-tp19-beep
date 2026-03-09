@@ -1,4 +1,4 @@
-from CollectiblesCollection import valid_id, valid_price, valid_year
+from validators import valid_id, valid_price, valid_year
 
 def test_valid_id():
     assert valid_id("12345") == True
@@ -18,5 +18,3 @@ def test_valid_year():
     assert valid_year("20200") == False
     assert valid_year("202") == False
     assert valid_year("abc") == False
-
-    
