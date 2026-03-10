@@ -109,4 +109,24 @@ def valid_year(year):
 def load_collection():
     collection = []
 
+try: 
+    with open(DATA FILE, "r") as f: 
+        for line in f: 
+            line = line.strip()
+            if line == "":
+                continue 
 
+            brand, name, year, price, rarity, number_id = line.split(",")
+
+            collectible = {
+                 "brand": brand,
+                "name": name,
+                "year": int(year),
+                "price": float(price),
+                "rarity": rarity, 
+                "number_id": number_id
+            }
+            collection.append(collectible)
+
+        excpet FileNotFoundError:
+            collection = []
