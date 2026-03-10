@@ -1,58 +1,18 @@
 import sys
 import random 
-from vaultlib import valid_id, valid_price, valid_year
-DATA_FILE = "collection.txt"
+from vaultlib import valid_id, valid_price, valid_year, load_collection, save_collection
+
 collection = []
 
-def load_collection():
-    global collection
-    collection = []
-
-    try:
-        with open(DATA_FILE, "r") as f:
-            for line in f: 
-                line = line.strip()
-                if line == "":
-                    continue
-
-                brand, name, year, price, rarity, number_id = line.split(",")
-
-                collectible = {
-                    "brand": brand,
-                    "name": name,
-                    "year": int(year),
-                    "price": float(price),
-                    "rarity": rarity, 
-                    "number_id": number_id
-                }
-                collection.append(collectible)
-
-    except FileNotFoundError:
-        collection = []
-
-
-
-def save_collection():
-    with open(DATA_FILE, "w") as f:
-        for collectible in collection:
-            line = (
-                f"{collectible['brand']},"
-                f"{collectible['name']},"
-                f"{collectible['year']},"
-                f"{collectible['price']},"
-                f"{collectible['rarity']},"
-                f"{collectible['number_id']}\n"
-            )
-            f.write(line)
-
-
-
-
 def main():
-    load_collection()
+    global collection
+    collection = load_collection
+
+if len(sys.argv) > 1:
+    print(f"Hello, {sys.argv[1]}! Welcome to the Collectors Vault!")
+
     while True:
-        print("\n!!Welcome to the Collectors Vault!!")
-        print("A manager for collectibles and toys from the 2000s and 2010s!")
+        print("\nA manager for collectibles and toys from the 2000s and 2010s!")
         print("LOADING...")
         print("...")
 
@@ -82,7 +42,7 @@ def main():
         elif choice == '7':
             random_collectible()
         elif choice == '8':
-            save_collection()
+            save_collection(collection)
             print("Exiting The Collector's Vault...")
             print("...")
             print("Goodbye!")
@@ -167,7 +127,7 @@ def add_collectible():
     }
 
     collection.append(collectible)
-    save_collection()
+    save_collection(collection)
 
     print("Collectible added successfully!")
 
@@ -184,7 +144,7 @@ def remove_collectible():
     for item in collection:
         if item["number_id"] == target_id:
             collection.remove(item)
-            save_collection()
+            save_collection(collection)
             print("Collectible Removed Successfully!")
             return 
         
@@ -281,7 +241,7 @@ def update_collectible():
                 print("Invalid option.")
                 return
 
-            save_collection()
+            save_collection(collection)
             print("Collectible updated successfully!")
             return 
 
