@@ -1,4 +1,4 @@
-from validators import valid_id, valid_price, valid_year
+from vaultlib import valid_id, valid_price, valid_year
 
 def test_valid_id():
     assert valid_id("12345") == True
