@@ -8,8 +8,8 @@ def main():
     global collection
     collection = load_collection
 
-if len(sys.argv) > 1:
-    print(f"Hello, {sys.argv[1]}! Welcome to the Collectors Vault!")
+    if len(sys.argv) > 1:
+        print(f"Hello, {sys.argv[1]}! Welcome to the Collectors Vault!")
 
     while True:
         print("\n!!Welcome to the Collectors Vault!!")
