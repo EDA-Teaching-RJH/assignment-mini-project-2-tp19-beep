@@ -6,7 +6,7 @@ collection = []
 
 def main():
     global collection
-    collection = load_collection
+    collection = load_collection()
 
     if len(sys.argv) > 1:
         print(f"Hello, {sys.argv[1]}! Welcome to the Collectors Vault!")
