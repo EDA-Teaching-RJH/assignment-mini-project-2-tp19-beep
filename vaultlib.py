@@ -22,6 +22,14 @@ class Collectible:
         self.price = price
         self.rarity = rarity 
         self.number_id = number_id
+
+    def __str__(self): 
+        return (
+            f"{self.brand} | {self.name} | {self.year} | "
+            f"{self.rarity} | ${self.price:.2f} USD | ID: {self.number_id}"
+        )
+
+        
             
 
 def valid_id(number_id):
