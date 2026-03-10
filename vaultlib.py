@@ -87,6 +87,9 @@ class Collectible:
         if not value:
             raise ValueError("ID must be a 5-digit number.")
             
+class Doll(Collectible): 
+    def __init__(self, brand, name, year, price, rarity, number_id): 
+        super().__init__(brand, name, year, price, rarity, number_id)
 
 def valid_id(number_id):
     if re.fullmatch(r"\d{5}", number_id):
@@ -102,4 +105,8 @@ def valid_year(year):
     if re.fullmatch(r"\d{4}", year):
         return True
     return False
+
+def load_collection():
+    collection = []
+
 
