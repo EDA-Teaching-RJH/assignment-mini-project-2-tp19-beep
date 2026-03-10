@@ -12,7 +12,8 @@ if len(sys.argv) > 1:
     print(f"Hello, {sys.argv[1]}! Welcome to the Collectors Vault!")
 
     while True:
-        print("\nA manager for collectibles and toys from the 2000s and 2010s!")
+        print("\n!!Welcome to the Collectors Vault!!")
+        print("A manager for collectibles and toys from the 2000s and 2010s!")
         print("LOADING...")
         print("...")
 
@@ -53,7 +54,6 @@ if len(sys.argv) > 1:
 
 
 
-
 def view_collection():
     print("Viewing collection...")
     if not collection:
@@ -61,7 +61,10 @@ def view_collection():
         return
     
     print("\nYour Collection:")
-    for c in collection:
+
+    sorted_collection = sorted(collection, key=lambda item: item["price"], reverse=True)
+
+    for c in sorted_collection:
         print(
             f"{c['brand']} | {c['name']} | {c['year']} | "
             f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
