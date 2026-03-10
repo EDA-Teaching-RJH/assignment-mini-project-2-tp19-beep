@@ -110,7 +110,7 @@ def load_collection():
     collection = []
 
 try: 
-    with open(DATA FILE, "r") as f: 
+    with open(DATA FILE, "r") as f:
         for line in f: 
             line = line.strip()
             if line == "":
@@ -119,7 +119,7 @@ try:
             brand, name, year, price, rarity, number_id = line.split(",")
 
             collectible = {
-                 "brand": brand,
+                "brand": brand,
                 "name": name,
                 "year": int(year),
                 "price": float(price),
@@ -128,5 +128,7 @@ try:
             }
             collection.append(collectible)
 
-        excpet FileNotFoundError:
-            collection = []
+excpet FileNotFoundError:
+    collection = []
+
+return collection
