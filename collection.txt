@@ -18,3 +18,4 @@ My Little Pony,Rainbow Dash 20% Cooler,2013,250.0,Very Rare,31221
 My Little Pony,G3 Minty Christmas Edition,2005,100.0,Rare,29221
 My Little Pony,Pinkie Pie G4 Core,2010,60.0,Uncommon,21455
 My Little Pony,Twilight Sparkle Brushable,2012,10.0,Common,36420
+Barbie,Miss Aquamarine,2007,124.0,Rare,53333

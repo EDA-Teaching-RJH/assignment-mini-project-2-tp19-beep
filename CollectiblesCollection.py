@@ -1,6 +1,6 @@
 import sys
 import random 
-from vaultlib import valid_id, valid_price, valid_year, load_collection, save_collection
+from vaultlib import valid_id, valid_price, valid_year, load_collection, save_collection, Collectible, Doll
 
 collection = []
 
@@ -120,6 +120,7 @@ def add_collectible():
         else:
             break 
 
+    new_doll = Doll(brand, name, year, price, rarity, number_id)
     collectible = {
         "brand": brand,
         "name": name, 
