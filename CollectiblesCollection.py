@@ -122,12 +122,12 @@ def add_collectible():
 
     new_doll = Doll(brand, name, year, price, rarity, number_id)
     collectible = {
-        "brand": brand,
-        "name": name, 
-        "year": year, 
-        "price": price, 
-        "rarity": rarity, 
-        "number_id": number_id
+        "brand": new_doll.brand,
+        "name": new_doll.name, 
+        "year": new_doll.year, 
+        "price": new_doll.price, 
+        "rarity": new_doll.rarity, 
+        "number_id": new_doll.number_id
     }
 
     collection.append(collectible)
