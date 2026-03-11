@@ -1,6 +1,6 @@
 import sys
 import random 
-from vaultlib import valid_id, valid_price, valid_year, load_collection, save_collection, Collectible, Doll
+from vaultlib import valid_id, valid_price, valid_year, load_collection, save_collection, Doll
 
 collection = []
 
@@ -47,6 +47,7 @@ def main():
             print("Exiting The Collector's Vault...")
             print("...")
             print("Goodbye!")
+            print("Session Ended.")
             break
         else:
             print("INVALID")
@@ -60,7 +61,7 @@ def view_collection():
         print("Your Collection is Empty.")
         return
     
-    print("\nYour Collection:")
+    print("\n--- Your Collection ---")
 
     sorted_collection = sorted(collection, key=lambda item: item["price"], reverse=True)
 
@@ -69,8 +70,6 @@ def view_collection():
             f"{c['brand']} | {c['name']} | {c['year']} | "
             f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
         )
-
-
 
 
 def add_collectible():
@@ -136,8 +135,6 @@ def add_collectible():
     print("Collectible added successfully!")
 
 
-
-
 def remove_collectible():
     if not collection:
         print("Your Collection is empty")
@@ -153,8 +150,6 @@ def remove_collectible():
             return 
         
     print("Collectible with given ID not found.")
-
-
 
 
 def search_collection():
@@ -183,8 +178,6 @@ def search_collection():
 
     if not found:
         print(f"No Collectible found.")
-
-
 
 
 def update_collectible():
@@ -252,13 +245,9 @@ def update_collectible():
     print("Collectible with given ID not found.")
 
 
-
-
 def count_collectibles():
     print("Counting Collectibles...")
     print(f"\nTotal Collectibles: {len(collection)}")
-
-
 
 
 def random_collectible():
