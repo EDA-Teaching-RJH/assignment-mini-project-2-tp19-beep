@@ -1,3 +1,10 @@
+"""
+test_vaultlib.py
+
+tests for validation functions used in Collectors Vault.
+tests ensure that ID, price and year behave correctly.
+"""
+
 from vaultlib import valid_id, valid_price, valid_year
 
 def test_valid_id():
