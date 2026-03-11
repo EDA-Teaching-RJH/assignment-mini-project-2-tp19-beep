@@ -6,10 +6,23 @@ Main application for the Collectors Vault system.
 This program allowsn Collectors to manage their collectibles and toys from the 2000s to 2010s. 
 Users can add, view, remove, search, update and request a random collectible within the system.
 The items for the Vault are stored in a text file.
+
+Features: 
+- Viewing collectibles
+- Adding new items
+- Removing items
+- Searching the collection
+- Updating collectibles
+- Random collectible selection
+
+Uses:
+- sys for command-line arguments
+- random for random selection
+- vaultlib for validation and file handling
 """
 
-import sys
-import random 
+import sys # random lets us select a collectible at random
+import random # random lets us select a collectible at random
 from vaultlib import valid_id, valid_price, valid_year, load_collection, save_collection, Doll
 
 collection = []
@@ -87,6 +100,7 @@ def view_collection():
     
     print("\n--- Your Collection ---")
 
+    # Sort the collection by brand
     sorted_collection = sorted(collection, key=lambda item: item["brand"], reverse=True)
 
     for c in sorted_collection:
@@ -160,8 +174,8 @@ def add_collectible():
         "number_id": new_doll.number_id
     }
 
-    collection.append(collectible)
-    save_collection(collection)
+    collection.append(collectible) # adds to collection
+    save_collection(collection) # runs save_collection function in vaultlib.py and saves
 
     print("Collectible added successfully!")
 
@@ -182,8 +196,8 @@ def remove_collectible():
     
     for item in collection:
         if item["number_id"] == target_id:
-            collection.remove(item)
-            save_collection(collection)
+            collection.remove(item) # removes from collection
+            save_collection(collection) # runs save_collection function in vaultlib.py and saves
             print("Collectible Removed Successfully!")
             return 
         
@@ -264,7 +278,7 @@ def update_collectible():
             elif choice == "3":
                 while True:
                     year_input = input("New Year: ").strip()
-                    if valid_year(year_input):
+                    if valid_year(year_input):  # runs valid_year in vaultlib.py to verify
                         item["year"] = int(year_input)
                         break 
                     print("Invalid year.")
@@ -278,7 +292,7 @@ def update_collectible():
             elif choice == "5":
                 while True:
                     price_input = input("New Price: ").strip()
-                    if valid_price(price_input):
+                    if valid_price(price_input): # runs valid_price in vaultlib.py to verify
                         item["price"] = float(price_input)
                         break 
                     print("Invalid price.")
@@ -290,7 +304,7 @@ def update_collectible():
                 print("Invalid option.")
                 return
 
-            save_collection(collection)
+            save_collection(collection) # runs save_collection function in vaultlib.py and saves
             print("Collectible updated successfully!")
             return 
 
@@ -303,7 +317,7 @@ def count_collectibles():
     """
 
     print("Counting Collectibles...")
-    print(f"\nTotal Collectibles: {len(collection)}")
+    print(f"\nTotal Collectibles: {len(collection)}") # shows number of collectibles
 
 
 def random_collectible():
@@ -315,12 +329,13 @@ def random_collectible():
         print("Your Collection is empty")
         return
 
+    # Choose a random item from the list
     c = random.choice(collection)
     print("\n---Random Collectible---")
     print("Choosing a random Collectible...")
     print(
         f"{c['brand']} | {c['name']} | {c['year']} | "
-            f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
+        f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
     )
 
 
