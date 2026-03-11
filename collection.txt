@@ -3,6 +3,7 @@ Barbie,Spanish Teacher Barbie,2000,35.0,Uncommon,29408
 Barbie,Modern Circle Barbie,2003,20.0,Uncommon,62523
 Barbie,Happy Family Midge,2002,110.0,Rare,56663
 Barbie,Blush & Gold Cocktail Dress Barbie,2006,400.0,Very Rare,79640
+Barbie,Miss Aquamarine,2007,124.0,Rare,53333
 Bratz,Felicia - Sweet Dreams Pajama Party,2005,1000.0,Uncommon,13458
 Bratz,Bratz Doll Yasmin Original Vintage MGA,2001,30.0,Common,48569
 Bratz,Bratz Princess Jade (1st Ed.),2005,1190.0,Rare,34870
@@ -18,4 +19,3 @@ My Little Pony,Rainbow Dash 20% Cooler,2013,250.0,Very Rare,31221
 My Little Pony,G3 Minty Christmas Edition,2005,100.0,Rare,29221
 My Little Pony,Pinkie Pie G4 Core,2010,60.0,Uncommon,21455
 My Little Pony,Twilight Sparkle Brushable,2012,10.0,Common,36420
-Barbie,Miss Aquamarine,2007,124.0,Rare,53333
