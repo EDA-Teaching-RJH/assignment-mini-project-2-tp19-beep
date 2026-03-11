@@ -1,10 +1,28 @@
+"""
+CollectiblesCollection.py
+
+Main application for the Collectors Vault system.
+
+This program allowsn Collectors to manage their collectibles and toys from the 2000s to 2010s. 
+Users can add, view, remove, search, update and request a random collectible within the system.
+The items for the Vault are stored in a text file.
+"""
+
 import sys
 import random 
 from vaultlib import valid_id, valid_price, valid_year, load_collection, save_collection, Doll
 
 collection = []
 
+
 def main():
+    """
+    Main program loop.
+
+    loads the collection from text file. 
+    Optionally greets the use if a command line arguemnt is used.
+    displays the main menu until user exits.
+    """
     global collection
     collection = load_collection()
 
@@ -56,6 +74,12 @@ def main():
 
 
 def view_collection():
+    """
+    Dsiplays all the Collectibles in the collection. 
+
+    The collection is sorted by brand.
+    Lambda Function.
+    """
     print("Viewing collection...")
     if not collection:
         print("Your Collection is Empty.")
@@ -63,7 +87,7 @@ def view_collection():
     
     print("\n--- Your Collection ---")
 
-    sorted_collection = sorted(collection, key=lambda item: item["price"], reverse=True)
+    sorted_collection = sorted(collection, key=lambda item: item["brand"], reverse=True)
 
     for c in sorted_collection:
         print(
@@ -73,6 +97,13 @@ def view_collection():
 
 
 def add_collectible():
+    """
+    Prompts the user to add details for a new collectible.
+
+    The function validates the year, price and ID input from vaultlib.py.
+    If the ID is unique, the collectible will be added to the text file.
+    """
+
     print("\n---Add New Collectible---")
     brand = input("Enter Brand: ").strip()
     name = input("Enter Name: ").strip()
@@ -136,6 +167,13 @@ def add_collectible():
 
 
 def remove_collectible():
+
+    """
+    Removes a collectible from the collection.
+
+    The user will enter the collectible id and the program will search for it.
+    If the ID is a match the collectible is removed the collection text file is updated.
+    """
     if not collection:
         print("Your Collection is empty")
         return
@@ -153,6 +191,13 @@ def remove_collectible():
 
 
 def search_collection():
+    """
+    Searches for Collectibles that match the users input.
+
+    The search will check all fields: brand, name, year, price, rarity, ID.
+    Any matching results will be displayed.
+    """
+
     if not collection:
         print("Your Collection is empty")
         return
@@ -181,6 +226,13 @@ def search_collection():
 
 
 def update_collectible():
+    """
+    Updates the details of an existing collectible.
+
+    The user enters the collectible ID and and select which field to update.
+    if the input is valid the collection will be updated.
+    """
+
     if not collection:
         print("Your Collection is empty")
         return
@@ -246,11 +298,19 @@ def update_collectible():
 
 
 def count_collectibles():
+    """
+    Displays the curreny number of collectibles stored in the collection.
+    """
+
     print("Counting Collectibles...")
     print(f"\nTotal Collectibles: {len(collection)}")
 
 
 def random_collectible():
+    """
+    Selects and displays a random collectible using a random function.
+    """
+
     if not collection:
         print("Your Collection is empty")
         return
