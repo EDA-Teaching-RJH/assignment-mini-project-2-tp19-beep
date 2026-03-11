@@ -1,7 +1,22 @@
+"""
+vaultlib.py
+
+Library for the Collectors Vault application.
+
+This contains validators, file handling, OOP, that is used by the main file CollectiblesCollection.py
+"""
+
 import re
 DATA_FILE = "collection.txt"
 
 class Collectible:
+    """
+    Base class reprsenting a collectible item.
+
+    Stores information about the collectible.
+    Property setters used to validate values when atributes are assigned.
+    """
+
     def __init__(self, brand, name, year, price, rarity, number_id ):
         self.brand = brand
         self.name = name
@@ -77,25 +92,48 @@ class Collectible:
         self._number_id = value
             
 class Doll(Collectible): 
+    """"
+    sublass of collectible representing a doll collectible.
+
+    inherits attributes and validation from Collectible class.
+    """
+
     def __init__(self, brand, name, year, price, rarity, number_id): 
         super().__init__(brand, name, year, price, rarity, number_id)
 
 def valid_id(number_id):
+    """
+    Returns true if the ID consists of exactly 5 digits
+    """
+
     if re.fullmatch(r"\d{5}", number_id):
         return True
     return False
 
 def valid_price(price):
+    """
+    returns true if the price is a valid number with up to 2 decimal places
+    """
+
     if re.fullmatch(r"\d+(\.\d{1,2})?", price):
         return True
     return False
 
 def valid_year(year):
+    """
+    returns true if the year consists of exactly 4 digits.
+    """
+
     if re.fullmatch(r"\d{4}", year):
         return True
     return False
 
 def load_collection():
+    """
+    Load collectibles from the collection.txt file.
+
+    Each line in the file is converted into a dictionary and returned as a list of collectibles.
+    """
     collection = []
 
     try: 
@@ -123,6 +161,11 @@ def load_collection():
     return collection
 
 def save_collection(collection):
+    """
+    saves current collection list to collection.txt file.
+
+    Each collectible dictionary is written as a comma separated line in the file.
+    """
     with open(DATA_FILE, "w") as f:
         for collectible in collection:
             line = (
