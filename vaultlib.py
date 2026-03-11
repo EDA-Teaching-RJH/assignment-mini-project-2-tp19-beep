@@ -3,10 +3,15 @@ vaultlib.py
 
 Library for the Collectors Vault application.
 
-This contains validators, file handling, OOP, that is used by the main file CollectiblesCollection.py
+contains: 
+- Validation with regular expressions
+- File I/O with text files
+- Classes and inheritance (OOP)
+
+used by the main file CollectiblesCollection.py
 """
 
-import re
+import re # re is used for regular expression validation.
 DATA_FILE = "collection.txt"
 
 class Collectible:

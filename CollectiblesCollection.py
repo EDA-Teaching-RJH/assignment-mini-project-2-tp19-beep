@@ -36,9 +36,10 @@ def main():
     Optionally greets the use if a command line arguemnt is used.
     displays the main menu until user exits.
     """
-    global collection
+    global collection  # Load saved collectibles from the text file
     collection = load_collection()
 
+    # If the user passed a command-line argument, greet them by name
     if len(sys.argv) > 1:
         print(f"Hello, {sys.argv[1]}! Welcome to the Collectors Vault!")
 
@@ -124,15 +125,15 @@ def add_collectible():
 
     while True: 
         year_input = input("Enter Year: ").strip()
-        if valid_year(year_input):  
+        if valid_year(year_input):  # Keep asking until the user enters a valid 4-digit year
             year = int(year_input)
             break
         else:
-            print("Invalid input. Please enter a valid year.")
+            print("Invalid input. Please enter a valid year.") 
 
     while True:
         price_input = input("Enter Price: ").strip()
-        if valid_price(price_input):
+        if valid_price(price_input): # Keep asking until the user enters a valid price
             price = float(price_input)
             break 
         else:
@@ -149,7 +150,7 @@ def add_collectible():
     while True:
         number_id = input("Enter ID (5-digits): ").strip()
         
-        if not valid_id(number_id):
+        if not valid_id(number_id): # Check whether the entered ID already exists in the collection
             print("Invalid input. Please enter a 5-digit numeric ID.")
             continue
 
@@ -236,7 +237,7 @@ def search_collection():
             found = True 
 
     if not found:
-        print(f"No Collectible found.")
+        print("No collectible matched your search.")
 
 
 def update_collectible():
@@ -338,6 +339,6 @@ def random_collectible():
         f"{c['rarity']} | ${c['price']:.2f} USD | ID: {c['number_id']}"
     )
 
-
+# Run the program only if this file is executed directly
 if __name__ == "__main__":
     main()
