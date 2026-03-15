@@ -19,3 +19,5 @@ My Little Pony,G3 Minty Christmas Edition,2005,100.0,Rare,29221
 My Little Pony,Pinkie Pie G4 Core,2010,60.0,Uncommon,21455
 My Little Pony,Twilight Sparkle Brushable,2012,10.0,Common,36420
 Bratz,MGA Bratz Yasmin Wintertime Wonderland Doll,2003,548.0,Rare,68273
+Barbie,Marie Antoinette,2003,275.0,Rare,58832
+Bratz,Yasmin Hollywood,2009,300.0,Rare,45729
