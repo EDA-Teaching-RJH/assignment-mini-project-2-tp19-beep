@@ -1,7 +1,7 @@
 ## Collectors Vault - Project reflection
 **Assignment 2**: Mini Project 2
 
-**Module** Code: EENG4101
+**Module Code**: EENG4101
 
 **Name**: Tyler Procope
 
