@@ -3,7 +3,7 @@ CollectiblesCollection.py
 
 Main application for the Collectors Vault system.
 
-This program allowsn Collectors to manage their collectibles and toys from the 2000s to 2010s. 
+This program allows Collectors to manage their collectibles and toys from the 2000s to 2010s. 
 Users can add, view, remove, search, update and request a random collectible within the system.
 The items for the Vault are stored in a text file.
 
